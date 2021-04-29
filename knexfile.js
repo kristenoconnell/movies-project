@@ -28,7 +28,13 @@ module.exports = {
 
   production: {
     client: "postgresql",
-    connection: DATABASE_URL,
+    connection: {
+      URL: DATABASE_URL,
+      host: "queenie.db.elephantsql.com",
+      database: "ipbsldjn",
+      user: "ipbsldjn",
+      password: "iJ6NycRrIzvNYqqPv6l_kR9qaXnubfC2"
+    },
     pool: { min: 0, max: 5 },
     migrations: {
       directory: path.join(__dirname, "src", "db", "migrations"),
